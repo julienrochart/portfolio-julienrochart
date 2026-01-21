@@ -1,0 +1,449 @@
+/* =========================================================
+   PORTFOLIO.CSS — STYLE RÉTRO ANNÉES 90
+   (GeoCities / Win95 / frames-era vibes)
+   Compatible avec ton HTML actuel :
+   .header .nav .logo .btn .badge .card .grid .logo-wall etc.
+   ========================================================= */
+
+:root{
+  /* Palette 90s */
+  --bg: #000080;              /* Navy */
+  --text: #ffffcc;            /* jaune pâle */
+  --muted: #ffffff;
+  --line: #000000;
+
+  /* Surfaces Windows 95 */
+  --surface-1: #c0c0c0;
+  --surface-2: #d6d6d6;
+
+  /* Accents hyper 90s */
+  --accent: #00ffff;          /* cyan */
+  --accent-2: #ff00ff;        /* magenta */
+  --accent-3: #ffff00;        /* yellow */
+
+  /* Effets 90s */
+  --shadow: 4px 4px 0 #000;
+  --shadow-sm: 2px 2px 0 #000;
+
+  /* Angles carrés */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+}
+
+/* Reset */
+*{ box-sizing: border-box; }
+html,body{ margin:0; padding:0; }
+
+/* Base */
+body{
+  font-family: "Comic Sans MS","MS Sans Serif","Tahoma","Verdana",system-ui,sans-serif;
+  background-color: var(--bg);
+
+  /* Pattern étoiles/pixels */
+  background-image:
+    radial-gradient(#ffffff 1px, transparent 1px),
+    radial-gradient(#00ffff 1px, transparent 1px);
+  background-size: 48px 48px, 96px 96px;
+  background-position: 0 0, 24px 24px;
+
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Liens 90s */
+a{
+  color: #00ffff;
+  text-decoration: underline;
+  font-weight: 800;
+}
+a:visited{ color: #ff00ff; }
+a:hover{
+  color: #ffff00;
+  background: #000;
+}
+a:active{ color: #ff0000; }
+
+p{ margin: 0 0 12px; }
+.muted{ color: var(--muted); opacity: .95; }
+
+.container{
+  width: min(900px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+/* =========================
+   Header / Nav
+   ========================= */
+.header{
+  padding: 16px 0 18px;
+  border-bottom: 4px double #fff;
+  background:
+    linear-gradient(180deg, #0000ff, #000080 70%, #000040);
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+/* “Badge” JR */
+.logo{
+  display:inline-flex;
+  width: 46px;
+  height: 46px;
+  align-items:center;
+  justify-content:center;
+
+  background: var(--accent-3);
+  color: #000;
+  border: 3px ridge #fff;
+  box-shadow: var(--shadow);
+
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* Links nav */
+.nav__links{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+/* =========================
+   Hero
+   ========================= */
+.hero{ }
+
+.kicker{
+  color: #fff;
+  font-size: 12px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero h1{
+  font-size: clamp(26px, 4vw, 42px);
+  line-height: 1.05;
+  margin: 0 0 10px;
+  color: var(--accent-3);
+  text-shadow: 2px 2px 0 #000;
+}
+
+.lead{
+  color: #fff;
+  max-width: 72ch;
+  margin-bottom: 12px;
+}
+
+/* CTA */
+.hero__cta{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   Buttons (Win95)
+   ========================= */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding: 8px 12px;
+  background: var(--surface-1);
+  color: #000;
+
+  border: 2px outset #fff;
+  box-shadow: var(--shadow-sm);
+
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.btn:hover{
+  background: var(--accent-3);
+  color: #000;
+  text-decoration: none;
+}
+
+.btn:active{
+  border: 2px inset #fff;
+  transform: translate(1px, 1px);
+}
+
+.btn--ghost{
+  background: #fff;
+}
+
+.btn--small{
+  padding: 6px 10px;
+}
+
+/* =========================
+   Badges
+   ========================= */
+.badges{
+  display:flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge{
+  border: 2px solid #000;
+  background: var(--accent-3);
+  color: #000;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================
+   Sections
+   ========================= */
+.section{
+  padding: 28px 0;
+}
+
+/* pas de halos modernes */
+.section::before{ display:none; }
+
+.section--muted{
+  background: rgba(0,0,0,.25);
+  border-top: 4px double #fff;
+  border-bottom: 4px double #fff;
+}
+
+.section h2{
+  margin: 0 0 10px;
+  font-size: 22px;
+
+  color: var(--accent);
+  text-shadow: 1px 1px 0 #000;
+
+  display: inline-block;
+  padding: 2px 6px;
+  background: #000;
+  border: 2px solid #fff;
+}
+
+/* retire l’underline néon */
+.section h2::after{ display:none; }
+
+.section__intro{
+  color: #fff;
+  margin-bottom: 14px;
+  max-width: 76ch;
+}
+
+/* =========================
+   Layout
+   ========================= */
+.grid{
+  display:grid;
+  gap: 12px;
+}
+
+.grid--3{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.two-col{
+  display:grid;
+  grid-template-columns: 1.25fr .9fr;
+  gap: 12px;
+  align-items: start;
+}
+
+/* =========================
+   Cards (Win95 windows)
+   ========================= */
+.card{
+  background: var(--surface-1);
+  color: #000;
+  border: 3px ridge #fff;
+  box-shadow: var(--shadow);
+  padding: 14px;
+  position: relative;
+}
+
+.card::before{ display:none; }
+
+.card h3{
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: #000080;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.card:hover{
+  outline: 2px dashed var(--accent-3);
+  outline-offset: -6px;
+}
+
+.card--wide{ padding: 16px; }
+
+/* Expect */
+.expect{ min-height: 120px; }
+.expect p{ margin-bottom: 0; }
+
+/* Trust actions (bouton recos) */
+.trust-actions{
+  margin: 6px 0 16px;
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   Logo wall
+   ========================= */
+.logo-wall{
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+}
+
+.logo-item{
+  background: #fff;
+  color: #000;
+  border: 3px ridge #fff;
+  box-shadow: var(--shadow);
+  padding: 12px;
+}
+
+.logo-item::after{ display:none; }
+
+.logo-figure{
+  margin: 0;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+  text-align: center;
+}
+
+.logo-figure img{
+  width: 56px;
+  height: 56px;
+  border: 2px solid #000;
+  background: var(--surface-1);
+  image-rendering: pixelated;
+}
+
+.logo-figure figcaption{
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000080;
+}
+
+.logo-note{
+  margin-top: 12px;
+  font-size: 12px;
+  color: #fff;
+}
+
+/* =========================
+   Projects (vibe coding)
+   ========================= */
+.project__tagline{
+  margin: 0 0 8px;
+  font-weight: 900;
+  color: #000;
+  background: var(--accent-3);
+  display: inline-block;
+  padding: 2px 6px;
+  border: 2px solid #000;
+}
+
+.project__summary{
+  margin: 0 0 10px;
+  color: #000;
+}
+
+/* Stack */
+.stack{
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 2px dotted #000;
+}
+
+.stack__label{
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000080;
+  margin-bottom: 6px;
+}
+
+.stack__list{
+  margin: 0;
+  padding-left: 18px;
+  color: #000;
+}
+
+.stack__list li{ margin: 6px 0; }
+
+/* Links row */
+.links{
+  display:flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* =========================
+   Contact
+   ========================= */
+.contact p{ margin: 8px 0; }
+
+.contact a{
+  color: #0000ff;
+  font-weight: 900;
+}
+.contact a:visited{ color: #800080; }
+
+/* =========================
+   Footer
+   ========================= */
+.footer{
+  padding: 18px 0;
+  border-top: 4px double #fff;
+  color: #fff;
+  background: #000040;
+}
+
+/* Focus */
+:where(a, button):focus-visible{
+  outline: 3px dotted var(--accent-3);
+  outline-offset: 3px;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .grid--3{ grid-template-columns: 1fr; }
+  .two-col{ grid-template-columns: 1fr; }
+  .nav__links a:not(.btn){ display:none; }
+}
+
+/* Bonus: classe blink (si tu veux du vrai 90s) */
+.blink{
+  animation: blink90s 1s steps(2, end) infinite;
+}
+@keyframes blink90s{
+  50%{ opacity: 0; }
+}
